@@ -1,12 +1,12 @@
-let RunSentimentAnalysis = ()=>{
-    textToAnalyze = document.getElementById("textToAnalyze").value;
-
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("system_response").innerHTML = xhttp.responseText;
-        }
-    };
-    xhttp.open("GET", "emotionDetector?textToAnalyze"+"="+textToAnalyze, true);
-    xhttp.send();
-}
+document.getElementById('emotion-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const result = document.getElementById('system_response');
+  result.textContent = 'Analyzing.';
+  const query = new URLSearchParams({textToAnalyze: document.getElementById('textToAnalyze').value});
+  try {
+    const response = await fetch('/emotionDetector?' + query.toString());
+    result.textContent = await response.text();
+  } catch (error) {
+    result.textContent = 'Unable to reach the server. Please try again.';
+  }
+});

@@ -1,0 +1,12 @@
+test_blank_skips_service (test_offline.OfflineTests.test_blank_skips_service) ... ok
+test_five_emotions (test_offline.OfflineTests.test_five_emotions) ... ok
+test_home (test_offline.OfflineTests.test_home) ... ok
+test_http_400 (test_offline.OfflineTests.test_http_400) ... ok
+test_server_blank (test_offline.OfflineTests.test_server_blank) ... ok
+test_server_outage (test_offline.OfflineTests.test_server_outage) ... ok
+test_server_success (test_offline.OfflineTests.test_server_success) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+OK
